@@ -1,0 +1,87 @@
+/* Google Font*/
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+/* Sass Variables*/
+$dark: #000000;
+$white: #ffffff;
+$warning: #ffba00;
+$danger: #ff1744;
+$info: #00efd2;
+$primary: #1185ed;
+$primary-dark: #0676d8;
+$gray: #d2d2d2;
+$light: #f5f5f5;
+$border-gray: 1px solid $gray;
+$border-dark: 1px solid $dark;
+$shadow: 2px 2px 6px #00000030;
+$shadow-all: 0 0 35px #00000020;
+$transition: ease-in-out all 0.3s;
+/* Main Css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.2%;
+  @media (max-width: 1200px) {
+    font-size: 51%;
+  }
+  @media (max-width: 992px) {
+    font-size: 46%;
+  }
+  @media (max-width: 768px) {
+    font-size: 36%;
+  }
+}
+body {
+  // font-family: Roboto, Helvetica, Arial, sans-serif;
+  // font-family: "Quicksand", sans-serif;
+  // font-family: 'Josefin Sans', sans-serif;
+  font-family: "Jost", sans-serif;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
+// Toast Notification
+.css-18gu508-Content {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+}
+.css-1klfh0r-Button {
+  display: flex;
+  align-items: center;
+}
+.css-1cbc3rp-Icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Implement all Sass file */
+@import "./Components/Layout/Header.scss";
+@import "./Components/HomeComponents/Banner.scss";
+@import "./Components/HomeComponents/BannerMarquee.scss";
+@import "./Components/HomeComponents/Products.scss";
+@import "./Components/HomeComponents/ProductSlider.scss";
+@import "./Components/Layout/Footer.scss";
+@import "./Components/Layout/FooterCounter.scss";
+@import "./Components/Layout/FooterIcons.scss";
+@import "./Components/Layout/FooterLinks.scss";
+@import "./Components/ImageComponents/ImageScreen.scss";
+@import "./Components/ImageComponents/ImageDetails.scss";
+@import "./Components/LoginSignUpComponents/Login.scss";
+@import "./Components/LoginSignUpComponents/Signup.scss";
+@import "./Components/CartComponents/CartScreen.scss";
+@import "./Components/CartComponents/CartDetails.scss";
+@import "./Components/CartComponents/CartPayment.scss";
+@import "./Components/DashboardComponents/DashboardLayout.scss";
+@import "./Components/DashboardComponents/DashboardMenu.scss";
+@import "./Components/DashboardComponents/AddProductScreen.scss";

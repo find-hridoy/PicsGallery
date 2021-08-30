@@ -1,0 +1,15 @@
+.imageScreen {
+  padding: 4rem 7rem;
+  .imageScreen__area {
+    display: flex;
+    justify-content: space-between;
+    .imageScreen__image {
+      border: $border-gray;
+      width: 70rem;
+      padding: 3rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

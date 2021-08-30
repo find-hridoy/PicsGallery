@@ -1,0 +1,22 @@
+.footerLinks {
+  .footerLinks__title {
+    p {
+      font-size: 2rem;
+      font-weight: 500;
+    }
+  }
+  ul {
+    margin-top: 1rem;
+    li {
+      margin-top: 0.3rem;
+      .footerLinks__items {
+        color: $dark;
+        font-size: 1.5rem;
+        font-weight: 500;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.cart {
+  padding: 2rem 7rem;
+  display: flex;
+  justify-content: space-between;
+  .cart__details {
+    width: 55%;
+    .cart__title {
+      font-size: 4rem;
+      font-weight: 500;
+    }
+  }
+  .cart__payment {
+    width: 35%;
+  }
+}

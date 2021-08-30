@@ -1,0 +1,100 @@
+.cartPayment {
+  position: sticky;
+  top: 4%;
+  box-shadow: $shadow-all;
+  padding: 3rem 4rem;
+  .cartPayment__title {
+    font-size: 2.2rem;
+    font-weight: 500;
+    padding-bottom: 2rem;
+  }
+  .cartPayment__amount {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: $border-gray;
+    border-top: $border-gray;
+    padding: 2rem 0;
+    .amount__order-total {
+      font-size: 1.5rem;
+    }
+    .amount__price {
+      font-size: 1.5rem;
+      font-weight: 600;
+      text-align: right;
+    }
+  }
+  .cartPayment__coupon {
+    padding: 1.5rem 0;
+    border-bottom: $border-gray;
+    ul {
+      text-align: center;
+      .coupon__title {
+        font-size: 1.6rem;
+        font-weight: 500;
+        color: $primary-dark;
+        cursor: pointer;
+        display: inline;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    .coupon__field-label {
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin-bottom: 0.3rem;
+    }
+    .coupon__field {
+      display: flex;
+      justify-content: space-between;
+      input {
+        width: 90%;
+        border: $border-gray;
+        outline: none;
+        height: 3.5rem;
+        padding: 0.5rem;
+        font-size: 1.5rem;
+        font-weight: 500;
+        font-family: "Jost", sans-serif;
+        &:focus {
+          box-shadow: $shadow;
+        }
+        &:hover {
+          box-shadow: $shadow;
+        }
+      }
+      button {
+        width: 40%;
+        margin-left: 1rem;
+        background-color: $primary;
+        color: $white;
+        border: none;
+        cursor: pointer;
+        height: 3.5rem;
+        font-size: 1.4rem;
+        font-weight: 500;
+        font-family: "Jost", sans-serif;
+        &:hover {
+          background-color: $primary-dark;
+        }
+      }
+    }
+  }
+  .cartPayment__button {
+    margin-top: 2rem;
+    button {
+      width: 100%;
+      background-color: $primary;
+      color: $white;
+      border: none;
+      cursor: pointer;
+      height: 4.5rem;
+      font-size: 2rem;
+      font-weight: 500;
+      font-family: "Jost", sans-serif;
+      &:hover {
+        background-color: $primary-dark;
+      }
+    }
+  }
+}

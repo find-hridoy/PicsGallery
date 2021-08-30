@@ -1,0 +1,27 @@
+footer {
+  background-color: $light;
+  border-top: $border-gray;
+  padding: 4rem 7rem 0;
+  .footer__area {
+    border-bottom: $border-gray;
+    padding-bottom: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    .footer__logo {
+      .logo {
+        font-family: "Dancing Script", cursive;
+        font-weight: 700;
+        font-size: 3rem;
+      }
+    }
+    .footer__slogan {
+      margin-top: 0.5rem;
+      font-size: 1.6rem;
+      font-weight: 500;
+    }
+  }
+  .footer__copyrights {
+    font-size: 1.5rem;
+    padding: 1rem 0;
+  }
+}

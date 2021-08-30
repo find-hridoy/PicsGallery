@@ -1,0 +1,130 @@
+header {
+  .header__area {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 7rem;
+    align-items: center;
+    border-bottom: $border-gray;
+    .header__logo {
+      .logo {
+        font-family: "Dancing Script", cursive;
+        font-weight: 700;
+        font-size: 3rem;
+      }
+    }
+    .header__search {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      background-color: $light;
+      border: $border-gray;
+      margin: 0 2rem;
+      padding: 1rem 1.5rem;
+      .global__icon {
+        font-size: 2rem;
+        color: $dark;
+      }
+      input {
+        border: none;
+        width: 100%;
+        padding-left: 1.5rem;
+        outline: none;
+        font-size: 1.6rem;
+        font-weight: 400;
+        background-color: transparent;
+        font-family: "Jost", sans-serif;
+        // &::placeholder {
+        //   // font-weight: 400;
+        //   // font-family: "Jost", sans-serif;
+        // }
+      }
+      &:hover {
+        box-shadow: $shadow;
+      }
+    }
+    .header__nav {
+      nav {
+        ul {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          li {
+            position: relative;
+            .nav__item {
+              font-size: 1.5rem;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              margin-left: 1.5rem;
+              font-weight: 500;
+              color: $dark;
+              &:hover {
+                text-decoration: underline;
+              }
+              .global__icon {
+                font-size: 2.5rem;
+                color: $dark;
+              }
+            }
+            .dropdown {
+              margin-left: 1.5rem;
+              border: $border-gray;
+              width: 11.5rem;
+              border-radius: 2.5rem;
+              display: flex;
+              align-items: center;
+              // justify-content: space-around;
+              height: 4.5rem;
+              padding-left: 0.5rem;
+              cursor: pointer;
+              img {
+                background: #000;
+                height: 3rem;
+                width: 3rem;
+                border-radius: 50%;
+              }
+              .dropdown__username {
+                margin-left: 0.5rem;
+                font-weight: 500;
+                font-size: 1.4rem;
+                color: $dark;
+              }
+              .activeUsername {
+                color: $primary;
+              }
+            }
+            .activeDropdown {
+              border-color: $primary;
+            }
+            .dropdown__menu {
+              position: absolute;
+              box-shadow: $shadow-all;
+              width: 18rem;
+              right: 0;
+              margin-top: 1.5rem;
+              padding: 0.5rem 0;
+              .dropdown__item {
+                margin: 1rem;
+                font-size: 1.5rem;
+                font-weight: 500;
+                display: flex;
+                align-items: center;
+                padding: 1rem 1rem;
+                color: $dark;
+                cursor: pointer;
+                &:hover {
+                  background-color: $light;
+                  box-shadow: $shadow;
+                }
+                span {
+                  margin-left: 1rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

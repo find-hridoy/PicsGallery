@@ -1,0 +1,40 @@
+.imageDetails {
+  border: $border-gray;
+  width: 40rem;
+  padding: 3rem;
+  .imageDetails__title {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+  .imageDetails__author {
+    font-size: 1.5rem;
+    span {
+      font-weight: 600;
+      color: $primary;
+    }
+  }
+  .imageDetails__price {
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+  .imageDetails__category {
+    font-size: 1rem;
+    font-weight: 500;
+    color: $warning;
+  }
+  .imageDetails__button {
+    button {
+      width: 100%;
+      padding: 1.2rem 0;
+      font-size: 1.5rem;
+      font-weight: 600;
+      background-color: $primary;
+      border: none;
+      color: $white;
+      cursor: pointer;
+      &:hover {
+        background-color: $primary-dark;
+      }
+    }
+  }
+}

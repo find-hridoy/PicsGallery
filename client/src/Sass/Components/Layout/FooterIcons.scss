@@ -1,0 +1,24 @@
+.footerIcons {
+  margin-top: 1.5rem;
+  ul {
+    display: flex;
+    li {
+      margin-right: 1rem;
+      .footerIcons__item {
+        width: 4rem;
+        height: 4rem;
+        border: $border-gray;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $dark;
+        font-size: 2rem;
+        transition: $transition;
+        &:hover {
+          border: $border-dark;
+        }
+      }
+    }
+  }
+}

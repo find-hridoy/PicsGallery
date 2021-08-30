@@ -1,0 +1,58 @@
+.addProduct {
+  .addProduct__title {
+    font-size: 2.4rem;
+    font-weight: 600;
+  }
+  .addProduct__form {
+    margin-top: 3rem;
+    .addProduct__field {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1rem;
+      .addProduct__label {
+        font-size: 1.6rem;
+        font-weight: 500;
+        margin-bottom: 0.6rem;
+      }
+      input {
+        width: 40rem;
+        border: $border-gray;
+        outline: none;
+        padding: 1rem;
+        font-size: 1.5rem;
+        font-weight: 500;
+        font-family: "Jost", sans-serif;
+        &:focus {
+          box-shadow: $shadow;
+        }
+        &:hover {
+          box-shadow: $shadow;
+        }
+      }
+      .addProduct__ {
+        font-size: 1.3rem;
+        font-weight: 500;
+        color: $danger;
+        margin-top: 0.2rem;
+      }
+    }
+    .addProduct__divider {
+      display: flex;
+    }
+    .addProduct__button {
+      width: 40rem;
+      margin-top: 2rem;
+      background-color: $primary;
+      color: $white;
+      border: none;
+      cursor: pointer;
+      padding: 1.2rem 0;
+      font-size: 1.8rem;
+      font-weight: 500;
+      font-family: "Jost", sans-serif;
+      &:hover {
+        background-color: $primary-dark;
+      }
+    }
+  }
+}
