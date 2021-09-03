@@ -16,7 +16,7 @@ const App = () => (
    <div className="app">
       <Switch>
          <Route path="/" exact component={HomeScreen} />
-         <Route path="/images/:id" exact component={ImageScreen} />
+         <Route path="/items/:id" exact component={ImageScreen} />
          <Route path="/signup" exact component={SignupScreen} />
          <Route path="/login" exact component={LoginScreen} />
          <Route path="/cart" exact component={CartScreen} />

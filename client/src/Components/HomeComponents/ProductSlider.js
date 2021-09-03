@@ -12,26 +12,14 @@ SwiperCore.use([Navigation]);
 
 const ProductSlider = ({ products }) => (
    <div className="productSlider">
-      <Swiper
-         spaceBetween={-60}
-         slidesPerView={5}
-         navigation
-         //  pagination={{ clickable: true }}
-         //  onSwiper={(swiper) => console.log(swiper)}
-         //  onSlideChange={() => console.log('slide change')}
-      >
+      <Swiper spaceBetween={-60} slidesPerView={5} navigation>
          {products.map((image) => (
             <SwiperSlide key={image.id}>
-               <NavLink to={`/images/${image.id}`}>
+               <NavLink to={`/items/${image.id}`}>
                   <img src={image.img} alt="img" />
                </NavLink>
             </SwiperSlide>
          ))}
-         {/* {products.map((image) => (
-            <SwiperSlide key={image.id}>
-               <img src={image.img} alt="img" />
-            </SwiperSlide>
-         ))} */}
       </Swiper>
    </div>
 );

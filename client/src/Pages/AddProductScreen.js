@@ -124,8 +124,14 @@ const AddProductScreen = () => {
                         {...register('subCategory')}
                      >
                         <option value="">Select Sub Category</option>
+                        <option value="Mobile View">Mobile View</option>
+                        <option value="Marvel">Marvel</option>
+                        <option value="DC">DC</option>
+                        <option value="GOT">GOT</option>
+                        <option value="Nature">Nature</option>
+                        <option value="Vector">Vector</option>
+                        <option value="Art">Art</option>
                         <option value="Free">Free</option>
-                        <option value="Premium">Premium</option>
                      </select>
 
                      {errors.subCategory && (

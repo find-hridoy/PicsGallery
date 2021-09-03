@@ -1,16 +1,44 @@
 .imageDetails {
   border: $border-gray;
-  width: 40rem;
+  width: 46rem;
   padding: 3rem;
   .imageDetails__title {
     font-size: 2rem;
-    font-weight: 600;
+    font-weight: 500;
   }
   .imageDetails__author {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+    border-bottom: $border-gray;
+    padding-bottom: 0.5rem;
+    font-weight: 500;
     span {
       font-weight: 600;
       color: $primary;
+    }
+  }
+  .imageDetails__description {
+    font-size: 1.5rem;
+    border-bottom: $border-gray;
+    padding: 1rem 0;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+  .imageDetails__size,
+  .imageDetails__dimensions,
+  .imageDetails__type,
+  .imageDetails__category {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: $original-gray;
+    margin-top: 0.5rem;
+    span {
+      font-weight: 600;
+      color: $dark;
+    }
+  }
+  .imageDetails__type {
+    span {
+      text-transform: uppercase;
     }
   }
   .imageDetails__price {
@@ -18,9 +46,12 @@
     font-weight: 600;
   }
   .imageDetails__category {
-    font-size: 1rem;
-    font-weight: 500;
-    color: $warning;
+    border-bottom: $border-gray;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+    span {
+      color: $warning;
+    }
   }
   .imageDetails__button {
     button {

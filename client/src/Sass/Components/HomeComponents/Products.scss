@@ -1,11 +1,25 @@
 .products {
   padding: 5rem 0;
   .products__premium {
+    margin-bottom: 5rem;
     p {
       margin-left: 7rem;
-      margin-bottom: 4rem;
+      margin-bottom: 3.5rem;
       font-size: 3rem;
       font-weight: 600;
+    }
+    .productSlider {
+      .swiper-wrapper {
+        text-align: center;
+      }
+      .swiper-button-prev.swiper-button-disabled,
+      .swiper-button-next.swiper-button-disabled {
+        opacity: 0;
+      }
+      img {
+        height: 31rem;
+        width: 18rem;
+      }
     }
   }
 }

@@ -55,6 +55,7 @@ const ProductListScreen = ({ history }) => {
                         <th>Id</th>
                         <th>Title</th>
                         <th>Category</th>
+                        <th>Sub Category</th>
                         <th>Price</th>
                         <th>Date</th>
                         <th>Action</th>
@@ -65,6 +66,7 @@ const ProductListScreen = ({ history }) => {
                            <td>{product._id}</td>
                            <td>{product.title}</td>
                            <td>{product.category}</td>
+                           <td>{product.subCategory}</td>
                            <td>{product.price}</td>
                            <td>
                               <Moment format="DD - MMM - YYYY">{product.createdAt}</Moment>
