@@ -1,6 +1,5 @@
 // Dependencies
 const bcrypt = require('bcryptjs');
-
 const asyncHandler = require('express-async-handler');
 const User = require('../models/userModel');
 const { generateToken } = require('../utils/generateToken');
@@ -110,8 +109,42 @@ const getUserProfile = asyncHandler(async (req, res) => {
     }
 });
 
+/**
+ * @desc    Get all users
+ * @route   Post /api/users/profile
+ * @access  Private/Admin
+ */
+const getUsers = asyncHandler(async (req, res) => {
+    // eslint-disable-next-line no-underscore-dangle
+    const user = await User.find({});
+    if (user) {
+        res.json(user);
+    } else {
+        res.status(404);
+        throw new Error('User not found.');
+    }
+});
+
+/**
+ * @desc    Delete a user
+ * @route   Post /api/users/delete/:id
+ * @access  Private/Admin
+ */
+const deleteUser = asyncHandler(async (req, res) => {
+    const user = await User.findById(req.params.id);
+    if (user) {
+        await user.remove();
+        res.json({ message: 'User remove successfully.' });
+    } else {
+        res.status(401);
+        throw new Error('User not found.');
+    }
+});
+
 module.exports = {
     userRegister,
     userLogin,
     getUserProfile,
+    getUsers,
+    deleteUser,
 };

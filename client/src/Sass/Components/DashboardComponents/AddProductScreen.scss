@@ -4,6 +4,8 @@
     font-weight: 600;
   }
   .addProduct__form {
+    // background: gray;
+    max-width: 60rem;
     margin-top: 3rem;
     .addProduct__field {
       display: flex;
@@ -14,8 +16,8 @@
         font-weight: 500;
         margin-bottom: 0.6rem;
       }
-      input {
-        width: 40rem;
+      .addProduct__input {
+        width: 100%;
         border: $border-gray;
         outline: none;
         padding: 1rem;
@@ -29,6 +31,12 @@
           box-shadow: $shadow;
         }
       }
+      .addProduct__select {
+        option {
+          font-size: 1.6rem;
+          font-weight: 500;
+        }
+      }
       .addProduct__ {
         font-size: 1.3rem;
         font-weight: 500;
@@ -38,9 +46,49 @@
     }
     .addProduct__divider {
       display: flex;
+      justify-content: space-between;
+      .addProduct__field {
+        .addProduct__input {
+          width: 29rem;
+        }
+
+        .addProduct__input-file {
+          border: $border-gray;
+          padding: 0.5rem;
+          width: 29rem;
+          &:focus {
+            box-shadow: $shadow;
+          }
+          &:hover {
+            box-shadow: $shadow;
+          }
+          &::-webkit-file-upload-button {
+            display: none;
+          }
+          &::before {
+            content: "Select image";
+            display: inline-block;
+            border: $border-gray;
+            outline: none;
+            padding: 0.5rem;
+            font-size: 1.4rem;
+            white-space: nowrap;
+            cursor: pointer;
+            font-weight: 600;
+            font-family: "Jost", sans-serif;
+            margin-right: 1rem;
+          }
+          &:hover::before {
+            border-color: $primary;
+          }
+          &:active::before {
+            border-color: $primary;
+          }
+        }
+      }
     }
     .addProduct__button {
-      width: 40rem;
+      width: 100%;
       margin-top: 2rem;
       background-color: $primary;
       color: $white;

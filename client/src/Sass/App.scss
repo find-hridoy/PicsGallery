@@ -15,6 +15,7 @@ $gray: #d2d2d2;
 $light: #f5f5f5;
 $border-gray: 1px solid $gray;
 $border-dark: 1px solid $dark;
+$border-light: 1px solid $light;
 $shadow: 2px 2px 6px #00000030;
 $shadow-all: 0 0 35px #00000020;
 $transition: ease-in-out all 0.3s;
@@ -65,6 +66,21 @@ a {
   justify-content: center;
 }
 
+// Global loading-loader
+.loading__global {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: $light;
+  opacity: 0.8;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* Implement all Sass file */
 @import "./Components/Layout/Header.scss";
 @import "./Components/HomeComponents/Banner.scss";
@@ -85,3 +101,5 @@ a {
 @import "./Components/DashboardComponents/DashboardLayout.scss";
 @import "./Components/DashboardComponents/DashboardMenu.scss";
 @import "./Components/DashboardComponents/AddProductScreen.scss";
+@import "./Components/DashboardComponents/ProductListScreen.scss";
+@import "./Components/DashboardComponents/UserListScreen.scss";

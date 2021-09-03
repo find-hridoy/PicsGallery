@@ -74,7 +74,6 @@ header {
               border-radius: 2.5rem;
               display: flex;
               align-items: center;
-              // justify-content: space-around;
               height: 4.5rem;
               padding-left: 0.5rem;
               cursor: pointer;
@@ -95,15 +94,18 @@ header {
               }
             }
             .activeDropdown {
-              border-color: $primary;
+              box-shadow: $shadow;
+              border-color: $primary-dark;
             }
             .dropdown__menu {
               position: absolute;
+              z-index: 1;
               box-shadow: $shadow-all;
               width: 18rem;
               right: 0;
               margin-top: 1.5rem;
               padding: 0.5rem 0;
+              background-color: $white;
               .dropdown__item {
                 margin: 1rem;
                 font-size: 1.5rem;

@@ -1,6 +1,12 @@
 /* eslint-disable prettier/prettier */
 import axios from 'axios';
 import {
+   USER_DELETE_FAILURE,
+   USER_DELETE_REQUEST,
+   USER_DELETE_SUCCESS,
+   USER_LIST_FAILURE,
+   USER_LIST_REQUEST,
+   USER_LIST_SUCCESS,
    USER_LOGIN_FAILURE,
    USER_LOGIN_REQUEST,
    USER_LOGIN_SUCCESS,
@@ -24,7 +30,7 @@ export const login = (username, password) => async (dispatch) => {
          },
       };
 
-      const { data } = await axios.post(`${BaseURI}/api/users/login`, { username, password }, config);
+      const { data } = await axios.post(`${BaseURI}/users/login`, { username, password }, config);
 
       dispatch({
          type: USER_LOGIN_SUCCESS,
@@ -78,6 +84,82 @@ export const registerUser = (fullName, email, username, password) => async (disp
    } catch (error) {
       dispatch({
          type: USER_REGISTER_FAILURE,
+         payload:
+            error.response && error.response.data.message
+               ? error.response.data.message
+               : error.message,
+      });
+   }
+};
+
+
+
+// User List
+export const listUsers = () => async (dispatch, getState) => {
+  
+   try {
+      dispatch({
+         type: USER_LIST_REQUEST,
+      });
+
+
+      const {userLogin: {userInfo}} = getState();
+
+      const config = {
+         headers: {
+            Authorization: `Bearer ${userInfo.token}`
+         },
+      };
+
+      const { data } = await axios.get(
+         `${BaseURI}/users`, config
+      );
+
+      dispatch({
+         type: USER_LIST_SUCCESS,
+         payload: data,
+      });
+
+   } catch (error) {
+      dispatch({
+         type: USER_LIST_FAILURE,
+         payload:
+            error.response && error.response.data.message
+               ? error.response.data.message
+               : error.message,
+      });
+   }
+};
+
+
+// Delete Product
+export const deleteUser = (id) => async (dispatch, getState) => {
+  
+   try {
+      dispatch({
+         type: USER_DELETE_REQUEST,
+      });
+
+      const {userLogin: {userInfo}} = getState();
+      
+
+      const config = {
+         headers: {
+            Authorization: `Bearer ${userInfo.token}`
+         },
+      };
+
+       await axios.delete(
+         `${BaseURI}/users/delete/${id}`, config
+      );
+
+      dispatch({
+         type: USER_DELETE_SUCCESS,
+      });
+
+   } catch (error) {
+      dispatch({
+         type: USER_DELETE_FAILURE,
          payload:
             error.response && error.response.data.message
                ? error.response.data.message

@@ -1,11 +1,22 @@
+/* eslint-disable prettier/prettier */
 import { applyMiddleware, combineReducers, createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
-import { userLoginReducer, userRegisterReducer } from './reducers/userReducers';
+import {
+   productCreateReducer,
+   productDeleteReducer,
+   productListReducer
+} from './reducers/productReducers';
+import { userDeleteReducer, userListReducer, userLoginReducer, userRegisterReducer } from './reducers/userReducers';
 
 const reducers = combineReducers({
    userLogin: userLoginReducer,
    userRegister: userRegisterReducer,
+   userList: userListReducer,
+   userDelete:userDeleteReducer,
+   createProduct: productCreateReducer,
+   productList: productListReducer,
+   productDelete: productDeleteReducer,
 });
 
 const userInfoFromStorage = localStorage.getItem('userInfo')

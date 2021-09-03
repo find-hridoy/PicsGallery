@@ -31,6 +31,17 @@ const loginSchema = Yup.object({
       .min(6, 'Password must contain at least 6 characters.'),
 });
 
-export { signUpSchema, loginSchema };
+const addProductSchema = Yup.object({
+   title: Yup.string().required('Product title is required.'),
+   description: Yup.string().required('Product description is required.'),
+   category: Yup.string().required('Product category is required.'),
+   subCategory: Yup.string().required('Product sub category is required.'),
+   price: Yup.string().required('Product price is required.'),
+   // file: Yup.mixed().required('Product image is required.'),
+   // .test('fileSize', 'The image is too large', (value) => value && value[0].size <= 2048)
+   // .test('type', 'Only jpeg file support', (value) => value && value[0].type === 'image/jpeg'),
+});
+
+export { signUpSchema, loginSchema, addProductSchema };
 // eslint-disable-next-line prettier/prettier
 

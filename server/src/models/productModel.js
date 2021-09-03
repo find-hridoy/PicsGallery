@@ -29,10 +29,13 @@ const ProductSchema = new Schema(
             type: String,
             required: true,
         },
+        subCategory: {
+            type: String,
+            required: true,
+        },
         price: {
             type: Number,
             required: true,
-            default: 0,
         },
         rating: {
             type: Number,
@@ -46,7 +49,7 @@ const ProductSchema = new Schema(
         },
         reviews: [reviewsSchema],
         image: {
-            type: String,
+            type: Object,
             required: true,
         },
         author: {

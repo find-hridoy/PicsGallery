@@ -6,6 +6,7 @@ const { success, error } = require('consola');
 
 // Internal Imports
 const userRoutes = require('./routes/userRoutes');
+const productRoutes = require('./routes/productRoutes');
 const { MDB, PORT } = require('./config');
 const { notFound, errorHandler } = require('./middleware/errorMiddleware');
 
@@ -19,6 +20,7 @@ app.use(express.json());
 
 // Routing Setup
 app.use('/api/users', userRoutes);
+app.use('/api/products', productRoutes);
 
 // Default Error Handler
 app.use(notFound);
