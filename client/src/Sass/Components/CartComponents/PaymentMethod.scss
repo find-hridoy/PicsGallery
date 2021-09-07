@@ -1,0 +1,64 @@
+.paymentMethod {
+  padding: 0 7rem;
+  .paymentMethod__title {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: $dark;
+    margin-bottom: 1rem;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 50rem;
+    .paymentMethod__radio {
+      border: $border-gray;
+      padding: 1.5rem 2rem;
+      display: flex;
+      //   align-items: flex-start;
+      font-size: 1.6rem;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+      input {
+        margin-right: 1rem;
+        margin-top: 0.9rem;
+      }
+      .paymentMethod__radio-label {
+        display: flex;
+        flex-direction: column;
+        .paymentMethod__radio-divider {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          img {
+            width: 45%;
+            height: 100%;
+          }
+          .paypal__image {
+            width: 5rem;
+            height: 100%;
+          }
+        }
+        .paymentMethod__label-description {
+          font-size: 1.3rem;
+          font-weight: 500;
+          color: $original-gray;
+          margin-top: 1rem;
+        }
+      }
+    }
+    button {
+      width: 15rem;
+      background-color: $primary;
+      color: $white;
+      border: none;
+      cursor: pointer;
+      height: 4rem;
+      font-size: 1.6rem;
+      font-weight: 500;
+      font-family: "Jost", sans-serif;
+      &:hover {
+        background-color: $primary-dark;
+      }
+    }
+  }
+}

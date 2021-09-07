@@ -1,0 +1,20 @@
+.multiStepNav {
+  padding: 3rem 7rem;
+  button {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: $primary-dark;
+    margin-right: 5rem;
+    display: inline-block;
+    border: none;
+    background-color: transparent;
+    font-family: "Jost", sans-serif;
+    cursor: pointer;
+    &:disabled,
+    &[disabled] {
+      color: $original-gray;
+      pointer-events: auto;
+      cursor: not-allowed;
+    }
+  }
+}
