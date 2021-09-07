@@ -66,6 +66,13 @@
       &:hover {
         background-color: $primary-dark;
       }
+      &:disabled,
+      &[disabled] {
+        background-color: $gray;
+        color: $original-gray;
+        pointer-events: auto;
+        cursor: not-allowed;
+      }
     }
   }
 }

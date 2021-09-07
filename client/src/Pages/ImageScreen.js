@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom';
 import { useToasts } from 'react-toast-notifications';
 import ImageDetails from '../Components/ImageComponents/ImageDetails';
 import Layout from '../Components/Layout/Layout';
-import { listProduct } from '../Redux/actions/productActions';
+import { detailsProduct } from '../Redux/actions/productActions';
 import Loading from '../Utils/Loading&Error/Loading';
 
 const ImageScreen = () => {
@@ -18,8 +18,8 @@ const ImageScreen = () => {
    // redux element
    const dispatch = useDispatch();
 
-   const productList = useSelector((state) => state.productList);
-   const { loading, error, products } = productList;
+   const productDetails = useSelector((state) => state.productDetails);
+   const { loading, error, product } = productDetails;
 
    useEffect(() => {
       if (error) {
@@ -28,11 +28,10 @@ const ImageScreen = () => {
             autoDismiss: true,
          });
       } else {
-         dispatch(listProduct());
+         dispatch(detailsProduct(id));
       }
-   }, [dispatch, error, addToast]);
+   }, [dispatch, error, addToast, id]);
 
-   const productDetails = products?.filter((product) => product._id === id);
    return (
       <Layout>
          {loading ? (
@@ -41,15 +40,10 @@ const ImageScreen = () => {
             <div className="imageScreen">
                <div className="imageScreen__area">
                   <div className="imageScreen__image">
-                     <Zoom
-                        img={productDetails[0]?.image.secure_url}
-                        zoomScale={3}
-                        height={400}
-                        width={220}
-                     />
+                     <Zoom img={product?.image.secure_url} zoomScale={3} height={400} width={220} />
                   </div>
                   <div className="imageScreen__details">
-                     <ImageDetails products={productDetails} />
+                     <ImageDetails product={product} />
                   </div>
                </div>
                <div className="imageScreen__description" />

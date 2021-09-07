@@ -18,6 +18,9 @@ const Header = () => {
    const userLogin = useSelector((state) => state.userLogin);
    const { userInfo } = userLogin;
 
+   const cart = useSelector((state) => state.cart);
+   const { cartItems } = cart;
+
    const logoutHandler = () => {
       dispatch(logout());
    };
@@ -45,6 +48,15 @@ const Header = () => {
                      <li>
                         <NavLink className="nav__item" to="/cart">
                            <AiOutlineShoppingCart />
+                           {cartItems?.length > 0 && (
+                              <input
+                                 className="nav__cart"
+                                 value={cartItems?.length}
+                                 disabled
+                                 type="text"
+                              />
+                           )}
+
                            <span>Cart</span>
                         </NavLink>
                      </li>

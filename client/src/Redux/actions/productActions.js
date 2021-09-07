@@ -8,6 +8,9 @@ import {
    PRODUCT_DELETE_FAILURE,
    PRODUCT_DELETE_REQUEST,
    PRODUCT_DELETE_SUCCESS,
+   PRODUCT_DETAILS_FAILURE,
+   PRODUCT_DETAILS_REQUEST,
+   PRODUCT_DETAILS_SUCCESS,
    PRODUCT_LIST_FAILURE,
    PRODUCT_LIST_REQUEST,
    PRODUCT_LIST_SUCCESS
@@ -85,6 +88,34 @@ export const listProduct = () => async (dispatch) => {
    }
 };
 
+
+// Product Details
+export const detailsProduct = (id) => async (dispatch) => {
+  
+   try {
+      dispatch({
+         type: PRODUCT_DETAILS_REQUEST,
+      });
+
+      const { data } = await axios.get(
+         `${BaseURI}/products/${id}`
+      );
+
+      dispatch({
+         type: PRODUCT_DETAILS_SUCCESS,
+         payload: data,
+      });
+
+   } catch (error) {
+      dispatch({
+         type: PRODUCT_DETAILS_FAILURE,
+         payload:
+            error.response && error.response.data.message
+               ? error.response.data.message
+               : error.message,
+      });
+   }
+};
 
 // Delete Product
 export const deleteProduct = (id) => async (dispatch, getState) => {

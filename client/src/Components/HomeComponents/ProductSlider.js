@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 // import Swiper core and required modules
@@ -10,17 +11,24 @@ import 'swiper/swiper.scss';
 // install Swiper modules
 SwiperCore.use([Navigation]);
 
-const ProductSlider = ({ products }) => (
+const ProductSlider = ({ products, headline }) => (
    <div className="productSlider">
-      <Swiper spaceBetween={-60} slidesPerView={5} navigation>
-         {products.map((image) => (
-            <SwiperSlide key={image.id}>
-               <NavLink to={`/items/${image.id}`}>
-                  <img src={image.img} alt="img" />
-               </NavLink>
-            </SwiperSlide>
-         ))}
-      </Swiper>
+      <p>{headline}</p>
+      <div className="productSlider-slider">
+         <Swiper spaceBetween={-60} slidesPerView={5} navigation>
+            {products?.map(
+               (product) =>
+                  product.category === 'Premium' &&
+                  product.subCategory === headline && (
+                     <SwiperSlide key={product._id}>
+                        <NavLink to={`/items/${product._id}`}>
+                           <img src={product.image.secure_url} alt={product._id} />
+                        </NavLink>
+                     </SwiperSlide>
+                  )
+            )}
+         </Swiper>
+      </div>
    </div>
 );
 export default ProductSlider;

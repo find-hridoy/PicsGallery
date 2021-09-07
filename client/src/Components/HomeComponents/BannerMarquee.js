@@ -27,6 +27,7 @@ const BannerMarquee = () => {
          dispatch(listProduct());
       }
    }, [dispatch, error, addToast]);
+
    return (
       <div className="banner__marquee">
          <div className="bannerMarquee__free">
@@ -35,7 +36,7 @@ const BannerMarquee = () => {
                <Loading type="BallTriangle" color="#1185ed" />
             ) : (
                <Marquee pauseOnHover="true" speed="60" gradientWidth="0px">
-                  {products.map(
+                  {products?.map(
                      (product) =>
                         product.category === 'Free' &&
                         product.subCategory === 'Free' && (
@@ -56,7 +57,7 @@ const BannerMarquee = () => {
                <Loading type="BallTriangle" color="#1185ed" />
             ) : (
                <Marquee pauseOnHover="true" speed="60" gradientWidth="0px" direction="right">
-                  {products.map(
+                  {products?.map(
                      (product) =>
                         product.category === 'Premium' && (
                            <div className="banner__marquee-image" key={product._id}>

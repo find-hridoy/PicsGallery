@@ -1,12 +1,14 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React, { useState } from 'react';
 
-const CartPayment = () => {
+const CartPayment = ({ cartItems }) => {
    // Coupon field show/hide
-   const [filedHide, setFieldHide] = useState(false);
+   const [fieldHide, setFieldHide] = useState(false);
+
    const handleShowHide = () => {
-      setFieldHide(!filedHide);
+      setFieldHide(!fieldHide);
    };
+
    return (
       <>
          <div className="cartPayment">
@@ -14,12 +16,14 @@ const CartPayment = () => {
             <div className="cartPayment__amount">
                <p className="amount__order-total">Order total:</p>
                <div>
-                  <p className="amount__price">62.44 USD</p>
+                  <p className="amount__price">
+                     {cartItems.reduce((acc, item) => acc + item.price, 0)} USD
+                  </p>
                   <p>All taxes & customs included</p>
                </div>
             </div>
             <div className="cartPayment__coupon">
-               {filedHide ? (
+               {fieldHide ? (
                   <div>
                      <p className="coupon__field-label">Coupon code:</p>
                      <div className="coupon__field">

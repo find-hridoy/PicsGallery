@@ -1,8 +1,27 @@
+/* eslint-disable no-underscore-dangle */
 import axios from 'axios';
 import fileDownload from 'js-file-download';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { addToCart } from '../../Redux/actions/cartActions';
 
-const ImageDetails = ({ products }) => {
+const ImageDetails = ({ product }) => {
+   const [btnDisabled, setBtnDisabled] = useState(false);
+   const dispatch = useDispatch();
+   const cart = useSelector((state) => state.cart);
+   const { cartItems } = cart;
+   const itemExist = cartItems.find((x) => x.product_id === product?._id);
+
+   const handleAddToCart = (id) => {
+      dispatch(addToCart(id));
+   };
+   useEffect(() => {
+      if (itemExist) {
+         setBtnDisabled(true);
+      } else {
+         setBtnDisabled(false);
+      }
+   }, [itemExist, setBtnDisabled]);
    const handleDownload = async (url, filename) => {
       const res = await axios.get(url, {
          responseType: 'blob',
@@ -12,42 +31,48 @@ const ImageDetails = ({ products }) => {
    return (
       <>
          <div className="imageDetails">
-            <div className="imageDetails__title">{products[0]?.title}</div>
+            <div className="imageDetails__title">{product?.title}</div>
             <div className="imageDetails__author">
                by <span>Pinterest</span>
             </div>
-            <div className="imageDetails__description">{products[0]?.description}</div>
+            <div className="imageDetails__description">{product?.description}</div>
             <div className="imageDetails__size">
-               Original size: <span>{(products[0]?.image.bytes / 1024).toFixed(1)} KB</span>
+               Original size: <span>{(product?.image.bytes / 1024).toFixed(1)} KB</span>
             </div>
             <div className="imageDetails__dimensions">
                Dimensions:{' '}
                <span>
-                  {products[0]?.image.width} x {products[0]?.image.height}
+                  {product?.image.width} x {product?.image.height}
                </span>
             </div>
             <div className="imageDetails__type">
                Items type:
-               <span> {products[0]?.image.format}</span>
+               <span> {product?.image.format}</span>
             </div>
             <div className="imageDetails__category">
-               Category: <span>{products[0]?.category}</span>
+               Category: <span>{product?.category}</span>
             </div>
             <div className="imageDetails__button">
-               {products[0]?.category === 'Free' && products[0]?.subCategory === 'Free' ? (
+               {product?.category === 'Free' && product?.subCategory === 'Free' ? (
                   <button
                      type="button"
                      onClick={() =>
                         handleDownload(
-                           products[0]?.image.url,
-                           `${products[0]?.image.original_filename}.${products[0]?.image.format}`
+                           product?.image.url,
+                           `PicsGallery - ${product?.image.original_filename}.${product?.image.format}`
                         )
                      }
                   >
                      Download
                   </button>
                ) : (
-                  <button type="button">${products[0]?.price} • Add to cart</button>
+                  <button
+                     type="button"
+                     onClick={() => handleAddToCart(product?._id)}
+                     disabled={btnDisabled}
+                  >
+                     ${product?.price} • Add to cart
+                  </button>
                )}
             </div>
          </div>

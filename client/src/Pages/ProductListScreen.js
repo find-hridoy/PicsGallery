@@ -63,7 +63,12 @@ const ProductListScreen = ({ history }) => {
 
                      {products?.map((product) => (
                         <tr key={product._id}>
-                           <td>{product._id}</td>
+                           <td>
+                              {product._id}
+                              <div className="id__image-hover">
+                                 <img src={product.image.secure_url} alt={product._id} />
+                              </div>
+                           </td>
                            <td>{product.title}</td>
                            <td>{product.category}</td>
                            <td>{product.subCategory}</td>

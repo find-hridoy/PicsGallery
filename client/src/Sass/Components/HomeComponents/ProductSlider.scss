@@ -1,15 +1,23 @@
-// .swiper-wrapper {
-//   margin-left: 75px;
-// }
-.swiper-wrapper {
-  text-align: center;
-}
-.swiper-button-prev.swiper-button-disabled,
-.swiper-button-next.swiper-button-disabled {
-  opacity: 0;
-}
 .productSlider {
-  img {
-    height: 31rem;
+  margin-bottom: 5rem;
+  p {
+    margin-left: 7rem;
+    margin-bottom: 3.5rem;
+    font-size: 3rem;
+    font-weight: 600;
+  }
+  .productSlider-slider {
+    .swiper-wrapper {
+      text-align: center;
+    }
+    .swiper-button-prev.swiper-button-disabled,
+    .swiper-button-next.swiper-button-disabled {
+      opacity: 0;
+    }
+    img {
+      height: 31rem;
+      width: 18rem;
+      object-fit: cover;
+    }
   }
 }

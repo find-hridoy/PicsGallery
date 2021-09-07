@@ -12,6 +12,7 @@
     img {
       height: 25rem;
       width: 15rem;
+      object-fit: cover;
     }
   }
   .cartDetails__area {
@@ -21,20 +22,17 @@
     justify-content: space-between;
     .cartDetails__details {
       .details__title {
-        font-size: 2.2rem;
-        font-weight: 600;
+        font-size: 2rem;
+        font-weight: 500;
+        margin-bottom: 0.8rem;
       }
       .details {
+        margin-bottom: 0.2rem;
         font-size: 1.4rem;
         font-weight: 500;
+        color: $original-gray;
         span {
-          color: $info;
-        }
-      }
-      .details__price {
-        font-size: 1.4rem;
-        font-weight: 500;
-        span {
+          color: $dark;
           font-weight: 600;
         }
       }

@@ -44,6 +44,21 @@ const listProduct = asyncHandler(async (req, res) => {
 });
 
 /**
+ * @desc    Product Details
+ * @route   Post /api/products/:id
+ * @access  Public
+ */
+const detailsProduct = asyncHandler(async (req, res) => {
+    const product = await Product.findById(req.params.id);
+    if (product) {
+        res.json(product);
+    } else {
+        res.status(401);
+        throw new Error('Product not found.');
+    }
+});
+
+/**
  * @desc    Delete a product
  * @route   Post /api/products/delete/:id
  * @access  Private/Admin
@@ -59,4 +74,9 @@ const deleteProduct = asyncHandler(async (req, res) => {
     }
 });
 
-module.exports = { createProduct, listProduct, deleteProduct };
+module.exports = {
+    createProduct,
+    listProduct,
+    detailsProduct,
+    deleteProduct,
+};
